@@ -1,0 +1,30 @@
+{
+  "name": "测试",
+  "content": [
+    {
+      "type": "basic",
+      "sort": 0,
+      "fullName": "",
+      "jobName": ""
+    },
+    {
+      "type": "language",
+      "sort": 1,
+      "fullName": "",
+      "jobName": ""
+    },
+    {
+      "type": "projects",
+      "sort": 2,
+      "fullName": "",
+      "jobName": ""
+    },
+    {
+      "type": "subject",
+      "sort": 3,
+      "fullName": "",
+      "jobName": ""
+    }
+  ],
+  "customize": {}
+}
