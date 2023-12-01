@@ -77,8 +77,8 @@ export default function Page() {
                     </div>
                     <div className="w-screen h-full flex justify-center">
                         <div className=" h-full">
-                            <Content></Content>
-                            {/* <Content className={`${selected !== 'content' ? 'hidden' : ''}`} ></Content> */}
+                            {/* <Content></Content> */}
+                            <Content className={`${selected !== 'content' ? 'hidden' : ''}`} ></Content>
                             <Customize className={`${selected !== 'customize' ? 'hidden' : ''}`}></Customize>
                         </div>
                         <Preview></Preview>

@@ -1,6 +1,8 @@
 import { Card, CardHeader, CardBody, CardFooter, Divider, Button } from "@nextui-org/react";
 import { forwardRef, LegacyRef, ReactNode, useState } from "react";
 import { RiDragMove2Line } from "react-icons/ri";
+import { FaEdit } from "react-icons/fa";
+
 import { SortableKnob } from "react-easy-sort";
 
 
@@ -13,14 +15,26 @@ type EditBoxProps = {
 
 
 
-const Handle = (_: any, ref: LegacyRef<HTMLDivElement> | undefined) => {
-    return <span ref={ref} className=" cursor-move w-auto">
-        <RiDragMove2Line />
+const DragIcon = (_: any, ref: LegacyRef<HTMLDivElement> | undefined) => {
+    return <span ref={ref} className=" cursor-move w-auto ">
+        <RiDragMove2Line className=" text-xl" />
     </span>
 }
 
 
-const SortHandle = forwardRef<HTMLDivElement, {}>(Handle)
+
+const EditIcon = ({ onClick }: { onClick: () => void }) => {
+    return <span onClick={onClick} className=" cursor-pointer w-auto ">
+        <FaEdit className=" text-xl" />
+    </span>
+}
+
+
+
+
+const SortHandle = forwardRef<HTMLDivElement, {}>(DragIcon)
+
+
 
 
 
@@ -46,15 +60,15 @@ export const EditBox = ({ children, onCancel, onSave, dragHandle }: EditBoxProps
 
         <CardHeader className="flex gap-3">
             <SortableKnob>
-                <SortHandle  ></SortHandle>
+                <SortHandle></SortHandle>
             </SortableKnob>
+            <EditIcon onClick={handleEdit}></EditIcon>
         </CardHeader>
 
         <CardBody>
 
-            <div onClick={handleEdit}>
-                {children(isEdit)}
-            </div>
+            {children(isEdit)}
+
         </CardBody>
 
         {

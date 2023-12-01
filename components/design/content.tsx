@@ -34,7 +34,6 @@ export default function Content({ className }: Props) {
                     onSortEnd={print}>
                     {
                         state?.content?.map((item: any) => {
-
                             return <SortableItem key={item?.type}>
                                 <div>
                                     <EditBox key={item?.type} >
