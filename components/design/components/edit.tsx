@@ -1,7 +1,7 @@
-import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button } from "@nextui-org/react";
-import { title } from "../../primitives";
-
-import { ReactNode, useState } from "react";
+import { Card, CardHeader, CardBody, CardFooter, Divider, Button } from "@nextui-org/react";
+import { forwardRef, LegacyRef, ReactNode, useState } from "react";
+import { RiDragMove2Line } from "react-icons/ri";
+import { SortableKnob } from "react-easy-sort";
 
 
 type EditBoxProps = {
@@ -10,6 +10,18 @@ type EditBoxProps = {
     children: (isEdit?: boolean) => ReactNode | ReactNode
     dragHandle?: ReactNode
 }
+
+
+
+const Handle = (_: any, ref: LegacyRef<HTMLDivElement> | undefined) => {
+    return <span ref={ref} className=" cursor-move w-auto">
+        <RiDragMove2Line />
+    </span>
+}
+
+
+const SortHandle = forwardRef<HTMLDivElement, {}>(Handle)
+
 
 
 export const EditBox = ({ children, onCancel, onSave, dragHandle }: EditBoxProps) => {
@@ -30,18 +42,16 @@ export const EditBox = ({ children, onCancel, onSave, dragHandle }: EditBoxProps
 
     return <Card className="w-full mt-1 mb-1"  >
 
-        {isEdit ? <>
 
-            <CardHeader className="flex gap-3">
-                <h3 className={title({ size: 'sm' })}>Edit</h3>
-            </CardHeader>
 
-            <Divider />
-
-        </> : null}
+        <CardHeader className="flex gap-3">
+            <SortableKnob>
+                <SortHandle  ></SortHandle>
+            </SortableKnob>
+        </CardHeader>
 
         <CardBody>
-            {dragHandle}
+
             <div onClick={handleEdit}>
                 {children(isEdit)}
             </div>

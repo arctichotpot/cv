@@ -5,6 +5,7 @@ import { useData } from "@/hooks/useData";
 import { EditBox } from "./components/edit";
 import { useEffect, forwardRef, LegacyRef, ReactNode } from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import { RiDragMove2Line } from "react-icons/ri";
 
 import SortableList, { SortableItem, SortableKnob } from "react-easy-sort";
 
@@ -15,14 +16,7 @@ type Props = {
 }
 
 
-const Handle = (_: any, ref: LegacyRef<HTMLDivElement> | undefined) => {
-    return <div ref={ref} onClick={() => console.log(123123)}>
-        asdasd123
-    </div>
-}
 
-
-const SortHandle = forwardRef<HTMLDivElement, {}>(Handle)
 
 
 export default function Content({ className }: Props) {
@@ -42,12 +36,8 @@ export default function Content({ className }: Props) {
                         state?.content?.map((item: any) => {
 
                             return <SortableItem key={item?.type}>
-
                                 <div>
-
-                                    <EditBox key={item?.type} dragHandle={<SortableKnob>
-                                        <SortHandle  ></SortHandle>
-                                    </SortableKnob>}>
+                                    <EditBox key={item?.type} >
                                         {(isEdit) => (
                                             <>
                                                 {isEdit ? "123" : item.type}
