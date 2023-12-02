@@ -1,6 +1,5 @@
-import mock from "./mock.json"
+import mock from "./mock.json";
 
-export async function GET() {   
-
-    return Response.json({ data:mock })
-  }
+export async function GET() {
+  return Response.json({ data: mock });
+}

@@ -21,17 +21,13 @@ export default function Layout({ children }: Props) {
 
 	const [data, setData] = useState<any>()
 
-
-
 	useEffect(() => {
 		init()
 	}, [])
 
 	const init = async () => {
-
 		const data = await getData()
 		setData(data.data)
-		// console.log(data.data,11)
 	}
 
 

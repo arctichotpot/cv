@@ -38,16 +38,20 @@ export default function Page() {
     return (
         <>
 
-            {
+
+            啊实打实打底衫
+
+            <Button>asd</Button>
+            <Button>asd</Button>
+
+            {/* {
                 state ? <>
                     <div className=" fixed top-4 w-2/4 right-0 left-0 z-20 " style={{ margin: '0 auto' }}>
                         <Card>
                             <CardBody>
                                 <div className="flex justify-between items-center ">
                                     <div className="flex justify-between items-center">
-                                        {/* <Button className="p-1" color="primary" variant="light" size="sm" as={Link} href="/">
-                                    Back Home
-                                </Button> */}
+                    
                                         <Tabs
                                             className=" mr-2 ml-2"
                                             color="primary"
@@ -77,14 +81,13 @@ export default function Page() {
                     </div>
                     <div className="w-screen h-full flex justify-center">
                         <div className=" h-full">
-                            {/* <Content></Content> */}
                             <Content className={`${selected !== 'content' ? 'hidden' : ''}`} ></Content>
                             <Customize className={`${selected !== 'customize' ? 'hidden' : ''}`}></Customize>
                         </div>
                         <Preview></Preview>
                     </div>
                 </> : <Spinner className=" fixed top-1/2 left-1/2" label="Loading..." />
-            }
+            } */}
         </>
     );
 }

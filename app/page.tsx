@@ -23,7 +23,6 @@ export default  function Page() {
 								resume or homepage
 							</h1>
 						</div>
-
 						<h1 className={`${title()} mt20`}>Choose an item to get started quickly </h1>
 
 						<CategoryCard	></CategoryCard>
@@ -31,9 +30,6 @@ export default  function Page() {
 					</div>
 				</section>
 			</main>
-
-
 		</>
-
 	);
 }
